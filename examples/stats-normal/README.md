@@ -44,5 +44,5 @@ console.log("Hello World!");
 ```
 asset output.js 28 bytes [emitted] [minimized] (name: main)
 ./example.js 29 bytes [built] [code generated]
-webpack 5.99.6 compiled successfully
+webpack X.X.X compiled successfully
 ```

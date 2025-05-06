@@ -42,5 +42,5 @@ console.log("Hello World!");
 ## Production mode
 
 ```
-webpack 5.99.6 compiled successfully
+webpack X.X.X compiled successfully
 ```
