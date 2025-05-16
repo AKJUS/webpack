@@ -55,10 +55,10 @@ export interface NormalModuleLoaderContext<OptionsType> {
 	sourceMap?: boolean;
 	mode: "development" | "production" | "none";
 	webpack?: boolean;
-	hashFunction: HashFunction,
-	hashDigest: HashDigest,
-	hashDigestLength: HashDigestLength,
-	hashSalt: HashSalt,
+	hashFunction: HashFunction;
+	hashDigest: HashDigest;
+	hashDigestLength: HashDigestLength;
+	hashSalt: HashSalt;
 	_module?: NormalModule;
 	_compilation?: Compilation;
 	_compiler?: Compiler;
@@ -245,9 +245,9 @@ type AdditionalData = {
 };
 
 type WebpackLoaderContextCallback = (
-	err: Error | undefined | null,
+	err: undefined | null | Error,
 	content?: string | Buffer,
-	sourceMap?: string | SourceMap,
+	sourceMap?: null | string | SourceMap,
 	additionalData?: AdditionalData
 ) => void;
 

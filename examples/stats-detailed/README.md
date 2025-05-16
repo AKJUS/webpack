@@ -78,5 +78,5 @@ LOG from webpack.FileSystemInfo
     Directory info in cache: 0 timestamps 0 hashes 0 timestamp hash combinations
     Managed items info in cache: 0 items
 
-2025-04-24 20:51:31: webpack 5.99.6 compiled successfully (922245dc37adc36977b5)
+XXXX-XX-XX XXXX:XX:XX: webpack X.X.X compiled successfully (922245dc37adc36977b5)
 ```

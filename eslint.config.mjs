@@ -27,6 +27,8 @@ export default defineConfig([
 		"!test/**/deprecations.js",
 		"!test/**/infrastructure-log.js",
 		"!test/helpers/*.*",
+		"!test/benchmarkCases/**/*.mjs",
+		"!test/_helpers/**/*.mjs",
 		"test/js/**/*.*",
 
 		// Ignore some folders
@@ -494,7 +496,8 @@ export default defineConfig([
 	{
 		files: [
 			"test/configCases/{dll-plugin-entry,dll-plugin-side-effects,dll-plugin}/**/webpack.config.js",
-			"examples/**/*.js"
+			"examples/**/*.js",
+			"test/NodeTemplatePlugin.test.js"
 		],
 		rules: {
 			"n/no-missing-require": "off"
