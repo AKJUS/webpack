@@ -136,10 +136,7 @@ declare module "@webassemblyjs/ast" {
 		Start?: (p: NodePath<Start>) => void;
 		Global?: (p: NodePath<Global>) => void;
 	}
-	export function traverse(
-		ast: AST,
-		visitor: Visitor
-	): void;
+	export function traverse(ast: AST, visitor: Visitor): void;
 	export class NodePath<T> {
 		node: T;
 		remove(): void;
@@ -231,7 +228,11 @@ declare module "@webassemblyjs/ast" {
 		init: Node[]
 	): ObjectInstruction;
 	export function signature(params: FuncParam[], results: string[]): Signature;
-	export function func(initFuncId: Identifier, signature: Signature, funcBody: Instruction[]): Func;
+	export function func(
+		initFuncId: Identifier,
+		signature: Signature,
+		funcBody: Instruction[]
+	): Func;
 	export function typeInstruction(
 		id: Identifier | undefined,
 		functype: Signature
@@ -246,7 +247,10 @@ declare module "@webassemblyjs/ast" {
 		index: Index
 	): ModuleExportDescr;
 
-	export function getSectionMetadata(ast: AST, section: string): { vectorOfSize: { value: number } };
+	export function getSectionMetadata(
+		ast: AST,
+		section: string
+	): { vectorOfSize: { value: number } };
 	export class FuncSignature {
 		args: string[];
 		result: string[];
@@ -261,12 +265,28 @@ declare module "@webassemblyjs/ast" {
 }
 
 declare module "@webassemblyjs/wasm-parser" {
-	export function decode(source: string | Buffer, options: { dump?: boolean, ignoreCodeSection?: boolean, ignoreDataSection?: boolean, ignoreCustomNameSection?: boolean }): import("@webassemblyjs/ast").AST;
+	export function decode(
+		source: string | Buffer,
+		options: {
+			dump?: boolean;
+			ignoreCodeSection?: boolean;
+			ignoreDataSection?: boolean;
+			ignoreCustomNameSection?: boolean;
+		}
+	): import("@webassemblyjs/ast").AST;
 }
 
 declare module "@webassemblyjs/wasm-edit" {
-	export function addWithAST(ast: import("@webassemblyjs/ast").AST, bin: any, newNodes: import("@webassemblyjs/ast").Node[]): ArrayBuffer;
-	export function editWithAST(ast: import("@webassemblyjs/ast").AST, bin: any, visitors: import("@webassemblyjs/ast").Visitor): ArrayBuffer;
+	export function addWithAST(
+		ast: import("@webassemblyjs/ast").AST,
+		bin: any,
+		newNodes: import("@webassemblyjs/ast").Node[]
+	): ArrayBuffer;
+	export function editWithAST(
+		ast: import("@webassemblyjs/ast").AST,
+		bin: any,
+		visitors: import("@webassemblyjs/ast").Visitor
+	): ArrayBuffer;
 }
 
 declare module "webpack-sources" {
@@ -388,35 +408,13 @@ declare module "webpack-sources" {
 	}
 }
 
-declare module "browserslist" {
-	function browserslist(query: string): string[] | undefined;
-	namespace browserslist {
-		export function loadConfig(
-			options:
-				| {
-						config: string;
-						env?: string;
-				  }
-				| {
-						path: string;
-						env?: string;
-				  }
-		): string | undefined;
-		export function findConfig(path: string): Record<string, string[]>;
-	}
-	export = browserslist;
-}
-
 declare module "json-parse-even-better-errors" {
-	function parseJson(text: string, reviver?: (this: any, key: string, value: any) => any, context?: number): any;
+	function parseJson(
+		text: string,
+		reviver?: (this: any, key: string, value: any) => any,
+		context?: number
+	): any;
 	export = parseJson;
-}
-
-// TODO remove that when @types/estree is updated
-interface ImportAttributeNode {
-	type: "ImportAttribute";
-	key: import("estree").Identifier | import("estree").Literal;
-	value: import("estree").Literal;
 }
 
 type RecursiveArrayOrRecord<T> =
@@ -425,8 +423,11 @@ type RecursiveArrayOrRecord<T> =
 	| T;
 
 declare module "loader-runner" {
-	export function getContext(resource: string) : string;
-	export function runLoaders(options: any, callback: (err: Error | null, result: any) => void): void;
+	export function getContext(resource: string): string;
+	export function runLoaders(
+		options: any,
+		callback: (err: Error | null, result: any) => void
+	): void;
 }
 
 declare module "watchpack" {
@@ -436,7 +437,10 @@ declare module "watchpack" {
 		constructor(options: import("./declarations/WebpackOptions").WatchOptions);
 		once(eventName: string, callback: any): void;
 		watch(options: any): void;
-		collectTimeInfoEntries(fileTimeInfoEntries: Map<string, number>, contextTimeInfoEntries: Map<string, number>): void;
+		collectTimeInfoEntries(
+			fileTimeInfoEntries: Map<string, number>,
+			contextTimeInfoEntries: Map<string, number>
+		): void;
 		pause(): void;
 		close(): void;
 	}

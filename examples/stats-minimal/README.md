@@ -44,5 +44,5 @@ console.log("Hello World!");
 ```
 1 asset
 1 module
-webpack 5.99.6 compiled successfully
+webpack X.X.X compiled successfully
 ```

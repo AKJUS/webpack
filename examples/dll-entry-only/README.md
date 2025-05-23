@@ -232,9 +232,9 @@ chunk (runtime: dll) dll.js (dll) 211 bytes (javascript) 670 bytes (runtime) [en
   dependent modules 199 bytes [dependent] 2 modules
   dll dll 12 bytes [built] [code generated]
     [used exports unknown]
-    dll entry 0:0-0
+    dll entry
     used as library export
-webpack 5.99.6 compiled successfully
+webpack X.X.X compiled successfully
 ```
 
 ## Production mode
@@ -246,7 +246,7 @@ chunk (runtime: dll) dll.js (dll) 211 bytes (javascript) 670 bytes (runtime) [en
   runtime modules 670 bytes 3 modules
   dependent modules 199 bytes [dependent] 2 modules
   dll dll 12 bytes [built] [code generated]
-    dll entry 0:0-0
+    dll entry
     used as library export
-webpack 5.99.6 compiled successfully
+webpack X.X.X compiled successfully
 ```

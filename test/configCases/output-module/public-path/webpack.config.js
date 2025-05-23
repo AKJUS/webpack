@@ -1,9 +1,6 @@
 const path = require("path");
 
-/** @typedef {import("../../../WatchTestCases.template").Env} Env */
-/** @typedef {import("../../../WatchTestCases.template").TestOptions} TestOptions */
-
-/** @type {import("../../../../").Configuration[]} */
+/** @type {(env: Env, options: TestOptions) => import("../../../../").Configuration[]} */
 module.exports = (env, { testPath }) => [
 	{
 		devtool: false,
@@ -178,6 +175,33 @@ module.exports = (env, { testPath }) => [
 			publicPath: "auto",
 			filename: "initial/bundle13.mjs",
 			chunkFilename: "async/[id].bundle13.mjs"
+		},
+		experiments: {
+			outputModule: true
+		}
+	},
+	{
+		devtool: false,
+		target: "web",
+		output: {
+			path: path.resolve(testPath, "./bundle14"),
+			module: true,
+			filename: "js/bundle14.mjs",
+			chunkFilename: "js/[id].bundle14.mjs"
+		},
+		experiments: {
+			outputModule: true
+		}
+	},
+	{
+		devtool: false,
+		target: "web",
+		output: {
+			publicPath: "https://example.com/public/path/",
+			path: path.resolve(testPath, "./bundle15"),
+			module: true,
+			filename: "js/bundle15.mjs",
+			chunkFilename: "js/[id].bundle15.mjs"
 		},
 		experiments: {
 			outputModule: true

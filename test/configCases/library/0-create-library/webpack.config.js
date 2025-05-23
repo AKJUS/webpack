@@ -2,9 +2,6 @@ const path = require("path");
 const webpack = require("../../../../");
 const supportsAsync = require("../../../helpers/supportsAsync");
 
-/** @typedef {import("../../../WatchTestCases.template").Env} Env */
-/** @typedef {import("../../../WatchTestCases.template").TestOptions} TestOptions */
-
 /** @type {(env: Env, options: TestOptions) => import("../../../../").Configuration[]} */
 module.exports = (env, { testPath }) => [
 	{
@@ -252,6 +249,26 @@ module.exports = (env, { testPath }) => [
 						reuseExistingChunk: true
 					}
 				}
+			}
+		},
+		experiments: {
+			outputModule: true
+		}
+	},
+	{
+		entry: ["./foo.js", "./index.js"],
+		output: {
+			uniqueName: "esm-multiple-entry-modules",
+			filename: "esm-multiple-entry-modules.js",
+			library: {
+				type: "module"
+			}
+		},
+		target: "node14",
+		resolve: {
+			alias: {
+				external: "./non-external",
+				"external-named": "./non-external-named"
 			}
 		},
 		experiments: {

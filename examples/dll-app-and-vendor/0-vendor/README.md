@@ -171,9 +171,9 @@ chunk (runtime: main) vendor.js (main) 57 bytes (javascript) 670 bytes (runtime)
   dependent modules 45 bytes [dependent] 1 module
   dll main 12 bytes [built] [code generated]
     [used exports unknown]
-    dll entry 0:0-0
+    dll entry
     used as library export
-webpack 5.99.6 compiled successfully
+webpack X.X.X compiled successfully
 ```
 
 ## Production mode
@@ -185,7 +185,7 @@ chunk (runtime: main) vendor.js (main) 57 bytes (javascript) 670 bytes (runtime)
   runtime modules 670 bytes 3 modules
   dependent modules 45 bytes [dependent] 1 module
   dll main 12 bytes [built] [code generated]
-    dll entry 0:0-0
+    dll entry
     used as library export
-webpack 5.99.6 compiled successfully
+webpack X.X.X compiled successfully
 ```

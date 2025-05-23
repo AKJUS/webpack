@@ -5,9 +5,6 @@ const webpack = require("../../../../");
 const path = require("path");
 const supportsAsync = require("../../../helpers/supportsAsync");
 
-/** @typedef {import("../../../WatchTestCases.template").Env} Env */
-/** @typedef {import("../../../WatchTestCases.template").TestOptions} TestOptions */
-
 /** @type {(env: Env, options: TestOptions) => import("../../../../").Configuration[]} */
 module.exports = (env, { testPath }) => [
 	{
@@ -197,6 +194,21 @@ module.exports = (env, { testPath }) => [
 		plugins: [
 			new webpack.DefinePlugin({
 				NAME: JSON.stringify("esm-runtimeChunk-concatenateModules-splitChunks")
+			})
+		]
+	},
+	{
+		resolve: {
+			alias: {
+				library: path.resolve(
+					testPath,
+					"../0-create-library/esm-multiple-entry-modules.js"
+				)
+			}
+		},
+		plugins: [
+			new webpack.DefinePlugin({
+				NAME: JSON.stringify("esm-multiple-entry-modules")
 			})
 		]
 	},
