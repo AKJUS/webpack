@@ -1,5 +1,13 @@
 # webpack
 
+## 5.104.2
+
+### Patch Changes
+
+- 50e0997: Fixed ESM default export handling for `.mjs` files in Module Federation
+- 557582a: Fixed a bug where a self-referencing dependency would have an unused export name when imported inside a web worker.
+- b0e340c: Improved parsing error reporting by adding a link to the loader documentation.
+
 ## 5.104.1
 
 ### Patch Changes
